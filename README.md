@@ -11,6 +11,9 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#objective">Objective</a></li>
+        <li><a href="#motivation">Motivation</a></li>
+        <li><a href="#solution">Solution</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -53,7 +56,7 @@ The game includes peer-to-peer connection of the friends in which a virtual room
 
 
 
-# BUILT WITH
+### BUILT WITH
 * MediaPipe: Open-source framework for detecting body parts
 * OpenCV: Open-source library for capturing video & frames
 * WebRTC and WebSocket: Open-source project for real-time communication
