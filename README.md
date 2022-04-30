@@ -14,10 +14,12 @@
         <li><a href="#objective">Objective</a></li>
         <li><a href="#motivation">Motivation</a></li>
         <li><a href="#solution">Solution</a></li>
+        <li><a href="#implementation">Implementation</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#challenges">Challenges</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -54,7 +56,7 @@ It provides a platform for yoga enthusiasts to practice the yoga pose with a vir
 #### 2. Multi Player Yoga Game
 The game includes peer-to-peer connection of the friends in which a virtual room is created where they select a group of yoga poses to be performed and a backend model is run that tracks everyone in the room and determines the accuracy percentage of every user doing yoga. In the end, the leaderboard is displayed with the winning data. This gaming feature helps the yoga enthusiasts to stay motivated for doing yoga and creates a fun moment between the friends since it brings out a real-life experience for the people as if they are all doing yoga together in a real physical room.
 
-# IMPLEMENTATION
+### IMPLEMENTATION
 #### 1. Yoga Practice Sessions
 https://user-images.githubusercontent.com/48343991/166100313-fa787d9e-63c9-4ec4-af81-52ab99532b71.mp4
 
@@ -76,6 +78,12 @@ https://user-images.githubusercontent.com/48343991/166100335-030d1d9b-005c-43c3-
 2. YOGA PRACTICE: Building the concept of one-to-one yoga practice session
 3. GAME SECTION: Creating the room space for multi player yoga game
 4. GAME IMPLEMENTATION: Integrating game section and pose comparison model
+
+
+<!-- CHALLENGES -->
+# CHALLENGES
+The hurdle that we have faced in this project is the combining of the two modules of our project namely practice session and multi player gaming.
+The issue that we have faced is that the two modules weren't compatible with each other so the choice we had is to change the content of any one of the module so we chose to change the modules and packages of the gaming module and after doing the changing we reached the final point to able to easily use the two modules together.
 
 
 <!-- CONTACT -->
