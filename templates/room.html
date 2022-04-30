@@ -1,0 +1,161 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Webrtc</title>
+    <link rel="stylesheet" href="{% static 'css/room.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="btns-Id">
+        <div class="audio-video-btn">
+            <button id="btn-toggle-audio" class="btns">Audio Mute</button>
+            <button id="btn-toggle-video" class="btns">Video On</button>
+        </div>
+        <div class="room-button-style">
+            <input type="text" id="user_name" value="{{ user_name }}" hidden>
+            <input type="text" id="roomId" value="{{ roomId }}" disabled>
+            <button id="btn-copy" class="btns" style="margin-left: 0px; border-radius: 0px; border-top-right-radius: 4px;border-bottom-right-radius: 4px;" onclick="copyRoomId()"><i class="fa-solid fa-copy"></i></button>
+            <button id="btn-join" type="button" class="btns">Join Room</button>
+        </div>
+    </div>
+    <div id="video-container" class="videoContainer">
+    </div>
+    <section class="services" id="services">
+        <div class="title reveal">
+            <h2 class="section-title">Select Workout to perform</h2>
+        </div>
+        <div class="content">
+            <div class="card reveal">
+                <div class="service-icon">
+                    <img src="{% static 'images/fullbody.png' %}" alt="img">
+                </div>
+                <div class="info">
+                    <h3>Full Body Workout</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <button id="myBtn" class="modalBtn">Select</button>
+                </div>
+            </div>
+            <div class="card reveal">
+                <div class="service-icon">
+                    <img src="{% static 'images/abs.png' %}" alt="img">
+                </div>
+                <div class="info">
+                    <h3>Abs Workout</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <button id="myBtns" class="modalBtn">Select</button>
+                </div>
+            </div>
+            <div class="card reveal">
+                <div class="service-icon">
+                    <img src="{% static 'images/legs.png' %}" alt="img">
+                </div>
+                <div class="info">
+                    <h3>Legs Workout</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <button id="myBtnss" class="modalBtn">Select</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title">Full Body Workout</h2>
+            <span class="close">&times;</span>
+            <div class="work" id="work">
+                <div class="content">
+                    <div class="card reveal">
+                        <div class="card-img">
+                            <img src="{% static 'images/fullbody/boat.jpeg' %}" alt="" class="option">
+                            <p>Navasana</p>
+                        </div>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-img">
+                            <img src="{% static 'images/fullbody/child.jpeg' %}" alt="">
+                            <p>Balasana</p>
+                        </div>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-img">
+                            <img src="{% static 'images/fullbody/downward_dog.jpeg' %}" alt="">
+                            <p>Adho Mukha Shvanasana</p>
+                        </div>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-img">
+                            <img src="{% static 'images/fullbody/tree.jpeg' %}" alt="">
+                            <p>Vrikshasana</p>
+                        </div>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-img">
+                            <img src="{% static 'images/fullbody/triangle.jpeg' %}" alt="">
+                            <p>Trikonasana</p>
+                        </div>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-img">
+                            <img src="{% static 'images/fullbody/warrior1.jpeg' %}" alt="">
+                            <p>Virabhadrasana</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-class">
+                <button id="startGame" class="startBtn">Start Game <i class="fa-solid fa-play"></i></button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'js/rooms.js' %}"></script>
+    <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        var imgbtn = document.getElementsByClassName("option")[0];
+        var services = document.querySelector('.services');
+
+        var startBtn = document.getElementById('startGame');
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        imgbtn.onclick = function() {
+            imgbtn.classList.toggle("selected");
+        }
+
+        startBtn.onclick = function() {
+            console.log('Start Game');
+            document.querySelector('#video-container').style.height = '100vh';
+            document.querySelector('#video-container').style.justifyContent = 'space-around';
+            var element = document.getElementsByClassName('remoteVideoDiv');
+            for (var i = 0; i < element.length; i++) {
+                element[i].style.width = '40%';
+            }
+            services.style.display = 'none';
+            modal.style.display = "none";
+
+        }
+
+        function copyRoomId() {
+            var copyText = document.getElementById("roomId");
+            navigator.clipboard.writeText(copyText.value);
+            console.log("Copied the text: " + copyText.value);
+        }
+    </script>
+</body>
+
+</html>
