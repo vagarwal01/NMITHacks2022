@@ -54,6 +54,13 @@ It provides a platform for yoga enthusiasts to practice the yoga pose with a vir
 #### 2. Multi Player Yoga Game
 The game includes peer-to-peer connection of the friends in which a virtual room is created where they select a group of yoga poses to be performed and a backend model is run that tracks everyone in the room and determines the accuracy percentage of every user doing yoga. In the end, the leaderboard is displayed with the winning data. This gaming feature helps the yoga enthusiasts to stay motivated for doing yoga and creates a fun moment between the friends since it brings out a real-life experience for the people as if they are all doing yoga together in a real physical room.
 
+# IMPLEMENTATION
+#### 1. Yoga Practice Sessions
+https://user-images.githubusercontent.com/48343991/166100313-fa787d9e-63c9-4ec4-af81-52ab99532b71.mp4
+
+#### 2. Multi Player Yoga Game
+https://user-images.githubusercontent.com/48343991/166100335-030d1d9b-005c-43c3-bac6-d40d70cc2254.mp4
+
 
 
 ### BUILT WITH
